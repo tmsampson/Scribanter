@@ -1,0 +1,15 @@
+☐ Move to separate GitHub
+☐ Add support for passing arguments on command line (raw)
+☐ Add support for passing arguments on command line (via JSON descriptor)
+☐ Document
+☐ Add support for JSON validation
+	☐ Look into supporting validating against a JSON schema using JsonSchema.Net
+	☐ Look into implementing a basic custom format (loosely based on LINQ queries) to validate constraints such as:
+		☐ Detecting duplicate primary keys
+		☐ Detecting missing foreign keys
+		☐ Detecting missing required fields (maybe already covered by schema)
+		☐ Detecting orphaned (unused) items
+☐ Setup GitHub actions to generate release builds that show up on  GitHub releases
+	☐ Release version 1
+☐ Support taking pull requests
+☐ Implement some unit testing that run with GitHub actions and show up via status badges in README
