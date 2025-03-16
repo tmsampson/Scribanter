@@ -1,8 +1,0 @@
-<Project>
-	<!-- Set build output location -->
-	<PropertyGroup>
-		<BaseOutputPath>..\Build\</BaseOutputPath>
-		<BaseIntermediateOutputPath>..\Build\Temp\Obj\</BaseIntermediateOutputPath>
-		<RestorePackagesPath>..\Build\Temp\NuGet</RestorePackagesPath>
-	</PropertyGroup>
-</Project>
