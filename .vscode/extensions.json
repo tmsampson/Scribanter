@@ -2,6 +2,7 @@
 	"recommendations": [
 		"xoofx.scriban",
 		"streetsidesoftware.code-spell-checker",
-		"aykutsarac.jsoncrack-vscode"
+		"aykutsarac.jsoncrack-vscode",
+		"pkief.material-icon-theme"
 	]
 }
