@@ -1,0 +1,3 @@
+[submodule "Src/External/Clap"]
+	path = Src/External/Clap
+	url = https://github.com/tmsampson/Clap.git
