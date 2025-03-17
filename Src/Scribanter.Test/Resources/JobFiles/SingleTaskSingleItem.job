@@ -1,0 +1,13 @@
+{
+	"tasks": [
+		{
+			"model": "CarsA.json",
+			"items": [
+				{
+					"template": "PrintCars.scriban",
+					"output": "../../Output/JobFiles/SingleTaskSingleItem.txt"
+				}
+			]
+		}
+	]
+}

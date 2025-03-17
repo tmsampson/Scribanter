@@ -1,0 +1,3 @@
+{{~ for animal in model.animals ~}}
+{{ animal.name }} goes {{ animal.sound }}.
+{{ end }}

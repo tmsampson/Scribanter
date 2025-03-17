@@ -8,7 +8,7 @@
 			"name": "C#: Generator Debug",
 			"type": "coreclr",
 			"request": "launch",
-			"preLaunchTask": "build",
+			"preLaunchTask": "Scribanter: build",
 			"program": "${workspaceFolder}/build/Debug/net9.0/scribanter.exe",
 			"args": [
 			],

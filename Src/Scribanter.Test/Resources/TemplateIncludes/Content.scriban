@@ -1,0 +1,5 @@
+{{ include "Header.scriban" title: "My Page Title" }}
+
+Some interesting content.
+
+{{ include "Footer.scriban" }}

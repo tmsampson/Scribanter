@@ -1,0 +1,20 @@
+{
+	"cars" :
+	[
+		{
+			"make" : "Toyota",
+			"model" : "Corolla",
+			"year" : 2018
+		},
+		{
+			"make" : "Honda",
+			"model" : "Civic",
+			"year" : 2019
+		},
+		{
+			"make" : "Ford",
+			"model" : "Fusion",
+			"year" : 2017
+		}
+	]
+}

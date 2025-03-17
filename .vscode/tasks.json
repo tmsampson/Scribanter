@@ -2,7 +2,7 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "init",
+			"label": "Scribanter: Init",
 			"type": "shell",
 			"command": "git submodule update --init --recursive",
 			"problemMatcher": [],
@@ -13,10 +13,23 @@
 		},
 		{
 			"type": "dotnet",
-			"label": "build",
+			"label": "Scribanter: Build",
 			"task": "build",
 			"group": "build",
 			"problemMatcher": [],
+		},
+		{
+			"label": "Scribanter: Run Tests",
+			"type": "shell",
+			"command": "dotnet test ${workspaceFolder}/Src/Scribanter.Test/Scribanter.Test.csproj --logger \"console;verbosity=normal\"",
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"detail": "Runs the tests for the C# project."
 		}
 	]
 }

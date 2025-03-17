@@ -1,0 +1,3 @@
+{{~ for car in model.cars ~}}
+Make: {{ car.make }}, Model: {{ car.model }}, Year: {{ car.year }}
+{{ end }}

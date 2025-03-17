@@ -1,8 +1,10 @@
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scribanter", "Scribanter.csproj", "{5F162047-71C4-A730-10F2-8456E4D1F966}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scribanter", "Scribanter\Scribanter.csproj", "{5F162047-71C4-A730-10F2-8456E4D1F966}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scribanter.Test", "Scribanter.Test\Scribanter.Test.csproj", "{97D598F8-7BCB-47C6-A87B-960093469C4E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,6 +16,10 @@ Global
 		{5F162047-71C4-A730-10F2-8456E4D1F966}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F162047-71C4-A730-10F2-8456E4D1F966}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F162047-71C4-A730-10F2-8456E4D1F966}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97D598F8-7BCB-47C6-A87B-960093469C4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97D598F8-7BCB-47C6-A87B-960093469C4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97D598F8-7BCB-47C6-A87B-960093469C4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97D598F8-7BCB-47C6-A87B-960093469C4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

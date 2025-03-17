@@ -1,6 +1,3 @@
-☐ Move to separate GitHub as 
-☐ Add support for passing arguments on command line (raw)
-☐ Add support for passing arguments on command line (via JSON descriptor)
 ☐ Document
 ☐ Add support for JSON validation
 	☐ Look into supporting validating against a JSON schema using JsonSchema.Net
@@ -13,3 +10,7 @@
 	☐ Release version 1
 ☐ Support taking pull requests
 ☐ Implement some unit testing that run with GitHub actions and show up via status badges in README
+
+✔ Move to separate GitHub as @done(25-03-17 08:30)
+✔ Add support for passing arguments on command line (raw) @done(25-03-17 15:41)
+✔ Add support for passing arguments on command line (via JSON descriptor) @done(25-03-17 15:42)

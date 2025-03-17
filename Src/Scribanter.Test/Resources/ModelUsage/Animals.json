@@ -1,0 +1,16 @@
+{
+	"animals": [
+		{
+			"name": "Dog",
+			"sound": "woof"
+		},
+		{
+			"name": "Cat",
+			"sound": "meow"
+		},
+		{
+			"name": "Cow",
+			"sound": "moo"
+		}
+	]
+}

@@ -1,13 +1,19 @@
 {
+	"files.associations": {
+		"*.job": "json"
+	},
 	"cSpell.language": "en-GB",
 	"cSpell.words": [
 		"Expando",
 		"LINQ",
 		"Newtonsoft",
 		"Scriban",
-		"scribanter"
+		"scribanter",
+		"xunit"
 	],
 	"material-icon-theme.folders.associations": {
 		"External": "Middleware",
+		"Scribanter": "Robot",
+		"Scribanter.Test": "Test"
 	}
 }

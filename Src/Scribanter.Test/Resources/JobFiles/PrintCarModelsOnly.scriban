@@ -1,0 +1,3 @@
+{{~ for car in model.cars ~}}
+Model: {{ car.model }}
+{{ end }}

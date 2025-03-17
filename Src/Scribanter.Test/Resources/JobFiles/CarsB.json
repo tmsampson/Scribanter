@@ -1,0 +1,20 @@
+{
+	"cars" :
+	[
+		{
+			"make" : "Audi",
+			"model" : "A3",
+			"year" : 2022
+		},
+		{
+			"make" : "BMW",
+			"model" : "X4",
+			"year" : 2018
+		},
+		{
+			"make" : "Volvo",
+			"model" : "XC90",
+			"year" : 2024
+		}
+	]
+}
