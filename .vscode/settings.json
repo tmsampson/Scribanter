@@ -1,9 +1,13 @@
 {
+	"cSpell.language": "en-GB",
 	"cSpell.words": [
 		"Expando",
 		"LINQ",
 		"Newtonsoft",
 		"Scriban",
 		"scribanter"
-	]
+	],
+	"material-icon-theme.folders.associations": {
+		"External": "Middleware",
+	}
 }
