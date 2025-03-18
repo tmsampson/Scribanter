@@ -21,10 +21,10 @@ jobs:
           dotnet-version: '9.x'
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore Src/Scribanter.sln
 
       - name: Build solution
-        run: dotnet build --no-restore
+        run: dotnet build Src/Scribanter.sln --no-restore
 
       - name: Run tests
         run: dotnet test --logger "trx;LogFileName=TestResults.trx"
