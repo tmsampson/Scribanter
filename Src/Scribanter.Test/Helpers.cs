@@ -54,7 +54,7 @@ public class TestBase
 
 	public void RunScriban(int expectedExitCode, string[] commandLineArgs)
 	{
-		//using (SuppressOutput())
+		using (SuppressOutput())
 		{
 			int exitCode = Program.Main(commandLineArgs);
 			Assert.Equal(expectedExitCode, exitCode);
