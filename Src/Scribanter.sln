@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scribanter", "Scribanter\Sc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scribanter.Test", "Scribanter.Test\Scribanter.Test.csproj", "{97D598F8-7BCB-47C6-A87B-960093469C4E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scribanter.Core", "Scribanter.Core\Scribanter.Core.csproj", "{E5AE8157-E18C-4129-A4F1-C2BC70C03951}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{97D598F8-7BCB-47C6-A87B-960093469C4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97D598F8-7BCB-47C6-A87B-960093469C4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97D598F8-7BCB-47C6-A87B-960093469C4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5AE8157-E18C-4129-A4F1-C2BC70C03951}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5AE8157-E18C-4129-A4F1-C2BC70C03951}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5AE8157-E18C-4129-A4F1-C2BC70C03951}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5AE8157-E18C-4129-A4F1-C2BC70C03951}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,8 @@
+<Project>
+	<!-- Set build output location -->
+	<PropertyGroup>
+		<BaseOutputPath>..\..\Build\Scribanter.Core\</BaseOutputPath>
+		<BaseIntermediateOutputPath>..\..\Build\Temp\Scribanter.Core\Obj\</BaseIntermediateOutputPath>
+		<RestorePackagesPath>..\..\Build\Temp\Scribanter.Core\NuGet</RestorePackagesPath>
+	</PropertyGroup>
+</Project>

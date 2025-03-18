@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-using Scriban;
-using Scriban.Runtime;
+﻿using Scribanter.Core;
 
 namespace Scribanter;
 
@@ -29,91 +27,22 @@ public class Program
 			return -1;
 		}
 
-		// Prepare job
-		Job? job;
-		if (options.JobPath != null)
+		// Prepare and run job
+		try
 		{
-			// Load job from job file
-			string jobJsonString = File.ReadAllText(options.JobPath);
-			job = JsonConvert.DeserializeObject<Job>(jobJsonString);
-		}
-		else
-		{
-			// Setup job from options
-			job = new();
-			job.Tasks.Add(new()
+			Job? job = (options.JobPath != null) ? Job.LoadFromFile(options.JobPath) : new Job(options.TemplatePath, options.OutputPath, options.ModelPath);
+			if(job == null)
 			{
-				ModelPath = options.ModelPath,
-				Items =
-				[
-					new () { TemplatePath = options.TemplatePath, OutputPath = options.OutputPath }
-				]
-			});
+				Console.Error.WriteLine("Error: Unable to load job.");
+				return -1;
+			}
+			JobRunner.Run(job);
+			return 0;
 		}
-		if (job == null)
+		catch(Exception e)
 		{
+			Console.Error.WriteLine($"Error: {e.Message}");
 			return -1;
 		}
-
-		// Setup path resolution
-		string jobRootDirectory = Path.GetDirectoryName(options.JobPath) ?? Environment.CurrentDirectory;
-		string ResolvePath(string path) => Path.IsPathRooted(path)? path : Path.Combine(jobRootDirectory, path);
-
-		// Create the job
-		TemplateContext jobContext = new();
-		TemplateLoader templateLoader = new();
-		jobContext.TemplateLoader = templateLoader;
-
-		// Process each task...
-		foreach (Job.Task task in job.Tasks)
-		{
-			// Push task model
-			if(task.ModelPath != null)
-			{
-				string taskModelPath = ResolvePath(task.ModelPath);
-				ScriptObject taskModel = Helpers.LoadModel(taskModelPath);
-				jobContext.PushGlobal(taskModel);
-			}
-
-			// Render each item in the task
-			foreach (Job.Task.Item item in task.Items)
-			{
-				// Load template
-				string itemTemplatePath = ResolvePath(item.TemplatePath);
-				templateLoader.BaseDirectory = Path.GetDirectoryName(itemTemplatePath) ?? "templates";
-				string templateContent = File.ReadAllText(itemTemplatePath);
-				Template template = Template.Parse(templateContent);
-
-				// Push item model
-				ScriptObject itemModel = [];
-				itemModel.Add("TEMPLATE_PATH", itemTemplatePath);
-				itemModel.Add("TEMPLATE_NAME", Path.GetFileName(itemTemplatePath));
-				jobContext.PushGlobal(itemModel);
-
-				// Render template
-				Console.WriteLine($"Rendering {itemTemplatePath}");
-				string result = template.Render(jobContext);
-
-				// Ensure the output directory exists
-				string itemOutputPath = ResolvePath(item.OutputPath);
-				string outputDir = Path.GetDirectoryName(itemOutputPath) ?? "output";
-				Directory.CreateDirectory(outputDir);
-
-				// Write output
-				Console.WriteLine($"Outputting {itemOutputPath}");
-				File.WriteAllText(itemOutputPath, result);
-
-				// Pop task model
-				jobContext.PopGlobal();
-			}
-
-			// Pop task model
-			if(task.ModelPath != null)
-			{
-				jobContext.PopGlobal();
-			}
-		}
-
-		return 0;
 	}
 }

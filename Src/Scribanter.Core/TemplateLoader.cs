@@ -2,9 +2,9 @@ using Scriban;
 using Scriban.Parsing;
 using Scriban.Runtime;
 
-namespace Scribanter;
+namespace Scribanter.Core;
 
-public class TemplateLoader() : ITemplateLoader
+internal class TemplateLoader() : ITemplateLoader
 {
 	public string BaseDirectory { get; set; } = string.Empty;
 

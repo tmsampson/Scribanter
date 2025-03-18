@@ -1,7 +1,7 @@
 <Project>
 	<!-- Set build output location -->
 	<PropertyGroup>
-		<BaseOutputPath>..\..\Build\</BaseOutputPath>
+		<BaseOutputPath>..\..\Build\Scribanter.Test\</BaseOutputPath>
 		<BaseIntermediateOutputPath>..\..\Build\Temp\Scribanter.Tests\Obj\</BaseIntermediateOutputPath>
 		<RestorePackagesPath>..\..\Build\Temp\Scribanter.Tests\NuGet</RestorePackagesPath>
 	</PropertyGroup>
