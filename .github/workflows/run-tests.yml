@@ -29,10 +29,4 @@ jobs:
         run: dotnet build Src/Scribanter.sln --no-restore
 
       - name: Run tests
-        run: dotnet test Src/Scribanter.sln --logger "trx;LogFileName=TestResults.trx"
-        
-      - name: Publish test results
-        uses: actions/upload-artifact@v4
-        with:
-          name: Test Results
-          path: TestResults.trx
+        run: dotnet test Src/Scribanter.sln --logger \"console;verbosity=normal\""
