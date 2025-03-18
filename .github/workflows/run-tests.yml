@@ -11,6 +11,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      checks: write
+      contents: read
+      actions: read
     steps:
       - name: Check out code
         uses: actions/checkout@v3
