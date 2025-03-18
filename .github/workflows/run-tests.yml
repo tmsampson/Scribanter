@@ -36,6 +36,6 @@ jobs:
         if: always()
         with:
           name: Test Results
-          path: 'TestResults/TestResults.trx'
+          path: 'Src/Scribanter.Test/TestResults/TestResults.trx'
           reporter: dotnet-trx
           fail-on-error: true
