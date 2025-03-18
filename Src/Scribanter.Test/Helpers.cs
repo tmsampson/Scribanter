@@ -7,7 +7,9 @@ public class TestBase
 {
 	public TestBase()
 	{
+		Console.WriteLine("Environment.CurrentDirectory BEFORE = " + Environment.CurrentDirectory);
 		Environment.CurrentDirectory = Path.Combine(AppContext.BaseDirectory, "../../../../");
+		Console.WriteLine("Environment.CurrentDirectory AFTER = " + Environment.CurrentDirectory);
 	}
 
 	public class NullTextWriter : TextWriter
