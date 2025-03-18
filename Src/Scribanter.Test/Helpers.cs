@@ -8,9 +8,7 @@ public class TestBase
 	public TestBase()
 	{
 		// IMPORTANT: Set current directory to project root so that tests can locate and output files correctly
-		Console.WriteLine("BEFORE: " + Directory.GetCurrentDirectory());
 		Environment.CurrentDirectory = GetProjectRoot();
-		Console.WriteLine("AFTER: " + Directory.GetCurrentDirectory());
 	}
 
 	public static string GetProjectRoot()
