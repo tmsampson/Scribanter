@@ -7,9 +7,24 @@ public class TestBase
 {
 	public TestBase()
 	{
-		Console.WriteLine("Environment.CurrentDirectory BEFORE = " + Environment.CurrentDirectory);
-		Environment.CurrentDirectory = Path.Combine(AppContext.BaseDirectory, "../../../../");
-		Console.WriteLine("Environment.CurrentDirectory AFTER = " + Environment.CurrentDirectory);
+		// IMPORTANT: Set current directory to project root so that tests can locate and output files correctly
+		Console.WriteLine("BEFORE: " + Directory.GetCurrentDirectory());
+		Environment.CurrentDirectory = GetProjectRoot();
+		Console.WriteLine("AFTER: " + Directory.GetCurrentDirectory());
+	}
+
+	public static string GetProjectRoot()
+	{
+		var currentDirectory = Directory.GetCurrentDirectory();
+		while (currentDirectory != null)
+		{
+			if (Directory.Exists(Path.Combine(currentDirectory, ".vscode")))
+			{
+				return currentDirectory;
+			}
+			currentDirectory = Directory.GetParent(currentDirectory)?.FullName;
+		}
+		throw new InvalidOperationException("Project root with .vscode directory not found.");
 	}
 
 	public class NullTextWriter : TextWriter
