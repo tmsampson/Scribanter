@@ -21,7 +21,7 @@
 		{
 			"label": "Scribanter: Run Tests",
 			"type": "shell",
-			"command": "dotnet test ${workspaceFolder}/Src/Scribanter.Test/Scribanter.Test.csproj --logger \"console;verbosity=normal\"",
+			"command": "dotnet test ${workspaceFolder}/Src/Scribanter.Sln --logger \"console;verbosity=normal\"",
 			"group": {
 				"kind": "test",
 				"isDefault": true
