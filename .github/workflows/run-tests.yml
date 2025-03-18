@@ -29,4 +29,13 @@ jobs:
         run: dotnet build Src/Scribanter.sln --no-restore
 
       - name: Run tests
-        run: dotnet test Src/Scribanter.sln --logger \"console;verbosity=detailed\"
+        run: dotnet test --logger "console;verbosity=detailed" --logger "trx;LogFileName=TestResults.trx" --blame
+        
+      - name: Publish Test Results
+        uses: dorny/test-reporter@v1
+        if: always()
+        with:
+          name: Test Results
+          path: 'TestResults.trx'
+          reporter: dotnet-trx
+          fail-on-error: true
