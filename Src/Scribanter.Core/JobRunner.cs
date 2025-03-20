@@ -40,7 +40,8 @@ public class JobRunner
 				// Push item model
 				ScriptObject itemModel = [];
 				itemModel.Add("TEMPLATE_PATH", itemTemplatePath);
-				itemModel.Add("TEMPLATE_NAME", Path.GetFileName(itemTemplatePath));
+				itemModel.Add("TEMPLATE_FILENAME", Path.GetFileName(itemTemplatePath));
+				itemModel.Add("TEMPLATE_NAME", Path.GetFileNameWithoutExtension(itemTemplatePath));
 				jobContext.PushGlobal(itemModel);
 
 				// Render template
