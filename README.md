@@ -28,8 +28,8 @@ You have two options for getting started:
 
 #### Option 1: Download the binaries
 
-1. Go to the [GitHub Releases](https://github.com/yourusername/scribanter/releases) page.
-2. Download the latest `v1` binaries and extract them.
+1. Go to the [GitHub Releases](https://github.com/tmsampson/Scribanter/releases) page.
+2. Download the latest binaries and extract them.
 
 #### Option 2: Build from source
 
