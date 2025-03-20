@@ -7,8 +7,8 @@
 		<Nullable>enable</Nullable>
 
 		<!-- Project versioning -->
-		<Version>1.0.0</Version>
-		<PackageVersion>1.0.0</PackageVersion>
+		<Version>0.1.0</Version>
+		<PackageVersion>0.1.0</PackageVersion>
 
 		<!-- Metadata for the project -->
 		<Company>Thomas Sampson</Company>
