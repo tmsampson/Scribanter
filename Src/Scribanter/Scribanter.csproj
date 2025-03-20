@@ -5,6 +5,16 @@
 		<TargetFramework>net9.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
+
+		<!-- Project versioning -->
+		<Version>1.0.0</Version>
+		<PackageVersion>1.0.0</PackageVersion>
+
+		<!-- Metadata for the project -->
+		<Company>Thomas Sampson</Company>
+		<Authors>Thomas Sampson</Authors>
+		<Description>Scribanter simplifies static content generation by providing a command-line wrapper around Scriban. Generate content from JSON models and Scriban templates without complex setup or coding. Ideal for HTML, config files, and more.</Description>
+		<RepositoryUrl>https://github.com/tmsampson/Scribanter</RepositoryUrl>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -12,7 +22,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Scribanter.Core\Scribanter.Core.csproj" />
+		<ProjectReference Include="..\Scribanter.Core\Scribanter.Core.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -12,8 +12,8 @@
 			}
 		},
 		{
-			"type": "dotnet",
 			"label": "Scribanter: Build",
+			"type": "dotnet",
 			"task": "build",
 			"group": "build",
 			"problemMatcher": [],
@@ -30,6 +30,20 @@
 				"$msCompile"
 			],
 			"detail": "Runs the tests for the C# project."
+		},
+		{
+			"label": "Scribanter: Publish",
+			"command": "dotnet",
+			"type": "process",
+			"args": [
+				"publish",
+				"${workspaceFolder}/Src/Scribanter/Scribanter.csproj",
+				"-c",
+				"Release",
+				"-o",
+				"${workspaceFolder}/Publish"
+			],
+			"problemMatcher": "$msCompile"
 		}
 	]
 }

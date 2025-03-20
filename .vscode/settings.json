@@ -12,6 +12,8 @@
 		"xunit"
 	],
 	"material-icon-theme.folders.associations": {
+		// See: https://raw.githubusercontent.com/material-extensions/vscode-material-icon-theme/main/images/folderIcons.png
+		"Publish": "Favicon",
 		"External": "Middleware",
 		"Scribanter": "Robot",
 		"Scribanter.Test": "Test"
