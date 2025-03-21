@@ -27,7 +27,6 @@ public class Job
 	[JsonProperty("tasks"), JsonRequired]
 	public List<Task> Tasks { get; set; } = [];
 
-	// Factory methods
 	public Job(string templatePath, string outputPath, string? modelPath = null)
 	{
 		Tasks.Add(new()
@@ -40,6 +39,7 @@ public class Job
 		});
 	}
 
+	// Factory methods
 	public static Job? LoadFromFile(string jobFilePath)
 	{
 		// Load job from job file
