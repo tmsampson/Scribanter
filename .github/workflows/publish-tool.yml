@@ -27,7 +27,7 @@ jobs:
           --store-password-in-clear-text
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore Src/Scribanter/Scribanter.csproj
 
     - name: Build
       run: dotnet build Src/Scribanter/Scribanter.csproj --configuration Release --no-restore
