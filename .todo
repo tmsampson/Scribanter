@@ -1,4 +1,4 @@
-☐ Document
+☐ Publish as private npm package and consume elsewhere
 ☐ Add support for JSON validation
 	☐ Look into supporting validating against a JSON schema using JsonSchema.Net
 	☐ Look into implementing a basic custom format (loosely based on LINQ queries) to validate constraints such as:
@@ -6,11 +6,12 @@
 		☐ Detecting missing foreign keys
 		☐ Detecting missing required fields (maybe already covered by schema)
 		☐ Detecting orphaned (unused) items
-☐ Setup GitHub actions to generate release builds that show up on  GitHub releases
-	☐ Release version 1
-☐ Support taking pull requests
-☐ Implement some unit testing that run with GitHub actions and show up via status badges in README
 
+✔ Implement some unit testing that run with GitHub actions and show up via status badges in README @done(25-03-21 07:56)
+✔ Document @done(25-03-21 07:55)
+✔ Support taking pull requests @done(25-03-21 07:55)
+✔ Setup GitHub actions to generate release builds that show up on  GitHub releases @done(25-03-21 07:55)
+	✔ Release version 1 @done(25-03-21 07:55)
 ✔ Move to separate GitHub as @done(25-03-17 08:30)
 ✔ Add support for passing arguments on command line (raw) @done(25-03-17 15:41)
 ✔ Add support for passing arguments on command line (via JSON descriptor) @done(25-03-17 15:42)
