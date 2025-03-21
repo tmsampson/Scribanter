@@ -8,7 +8,11 @@
 
 		<!-- Project versioning -->
 		<Version>0.1.0</Version>
+
+		<!-- NuGet tool packaging -->
 		<PackageVersion>0.1.0</PackageVersion>
+		<PackAsTool>true</PackAsTool>
+		<ToolCommandName>scribanter</ToolCommandName>
 
 		<!-- Metadata for the project -->
 		<Company>Thomas Sampson</Company>
