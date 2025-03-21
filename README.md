@@ -1,5 +1,9 @@
 # Scribanter
 
+![Build Status](https://github.com/tmsampson/Scribanter/actions/workflows/build.yml/badge.svg)
+![Test Status](https://github.com/tmsampson/Scribanter/actions/workflows/unit-tests.yml/badge.svg)
+
+## Overview
 Scribanter is a standalone tool which serves as a lightweight wrapper around [Scriban](https://github.com/scriban/scriban), designed to make static content generation from JSON models and [Scriban](https://github.com/scriban/scriban) templates simple and code-free. With Scribanter, you can:
 
 - Generate static HTML pages (or any text-based content) directly from JSON data models.
@@ -11,14 +15,9 @@ Scribanter is a standalone tool which serves as a lightweight wrapper around [Sc
 
 Existing static site generators can be complex, requiring significant setup and coding. Scribanter reduces the boilerplate by leveraging [Scriban](https://github.com/scriban/scriban) and providing an easy-to-use CLI interface. All you need is:
 
+- One or more `.scriban` templates (see [Syntax Guide](https://github.com/scriban/scriban/blob/master/doc/language.md)).
 - A `.json`  model containing your data. [Optional]
-- A collection of `.scriban` [Scriban](https://github.com/scriban/scriban) templates (see [Syntax Guide](https://github.com/scriban/scriban/blob/master/doc/language.md)).
 - A `.job` file to handle batch processing [Optional].
-
-## Continuous Integration
-
-![Build Status](https://github.com/tmsampson/Scribanter/actions/workflows/build.yml/badge.svg)
-![Test Status](https://github.com/tmsampson/Scribanter/actions/workflows/unit-tests.yml/badge.svg)
 
 ## Getting Started
 
