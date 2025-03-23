@@ -120,24 +120,20 @@ scribanter --job path/to/some.job
 
 ### Example 1
 
-Single task, multiple items (no data model).
+Single task, single items (no data model).
 
 ```json
 {
- "tasks": [
-  {
-   "items": [
+  "tasks": [
     {
-     "template": "PrintCars.scriban",
-     "output": "Output/Cars.txt"
-    },
-    {
-     "template": "PrintAnimals.scriban",
-     "output": "Output/Animals.txt"
+      "items": [
+        {
+         "template": "Templates/Basic1.scriban",
+         "output": "Output/Basic1.txt"
+        }
+      ]
     }
-   ]
-  }
- ]
+  ]
 }
 ```
 
@@ -147,21 +143,21 @@ Single task, multiple items, shared data model.
 
 ```json
 {
- "tasks": [
-  {
-   "model": "CarsA.json",
-   "items": [
-    {
-     "template": "PrintCars.scriban",
-     "output": "Output/CarsA.txt"
-    },
+  "tasks": [
      {
-     "template": "PrintCars.scriban",
-     "output": "Output/CarsB.txt"
-    }
-   ]
-  },
- ]
+       "model": "Cars.json",
+       "items": [
+         {
+          "template": "Templates/PrintCars1.scriban",
+          "output": "Output/CarsA.txt"
+         },
+         {
+          "template": "Templates/PrintCars2.scriban",
+          "output": "Output/CarsB.txt"
+         }
+       ]
+     },
+  ]
 }
 ```
 
@@ -171,26 +167,52 @@ Multiple tasks (multiple data models).
 
 ```json
 {
- "tasks": [
-  {
-   "model": "CarsA.json",
-   "items": [
+  "tasks": [
     {
-     "template": "PrintCars.scriban",
-     "output": "Output/CarsA.txt"
-    }
-   ]
-  },
-  {
-   "model": "CarsB.json",
-   "items": [
+      "model": "CarsA.json",
+      "items": [
+        {
+          "template": "Templates/PrintCars.scriban",
+          "output": "Output/CarsA.txt"
+        }
+      ]
+    },
     {
-     "template": "PrintCars.scriban",
-     "output": "Output/CarsB.txt"
+      "model": "CarsB.json",
+      "items": [
+        {
+          "template": "Templates/PrintCars.scriban",
+          "output": "Output/CarsB.txt"
+        }
+      ]
     }
-   ]
-  }
- ]
+  ]
+}
+```
+
+### Example 4
+
+Single task, multiple items, shared data model, *now with common template and output folders*.
+
+```json
+{
+  "tasks": [
+    {
+      "template-dir": "Templates",
+      "output-dir": "Output",
+      "model": "Cars.json",
+      "items": [
+        {
+          "template": "PrintCars1.scriban",
+          "output": "Cars1.txt"
+        },
+        {
+          "template": "PrintCars2.scriban",
+          "output": "Cars2.txt"
+        }
+      ]
+    },
+  ]
 }
 ```
 
