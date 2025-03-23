@@ -28,11 +28,15 @@ public class JobRunner
 				jobContext.PushGlobal(taskModel);
 			}
 
+			// Establish template and output directories
+			string templateDirectory = string.IsNullOrEmpty(task.TemplateDirectory)? rootDirectory : ResolvePath(task.TemplateDirectory, rootDirectory);
+			string outputDirectory = string.IsNullOrEmpty(task.OutputDirectory)? rootDirectory : ResolvePath(task.OutputDirectory, rootDirectory);
+
 			// Render each item in the task
 			foreach (Job.Task.Item item in task.Items)
 			{
 				// Load template
-				string itemTemplatePath = ResolvePath(item.TemplatePath, rootDirectory);
+				string itemTemplatePath = ResolvePath(item.TemplatePath, templateDirectory);
 				templateLoader.BaseDirectory = Path.GetDirectoryName(itemTemplatePath) ?? "templates";
 				string templateContent = File.ReadAllText(itemTemplatePath);
 				Template template = Template.Parse(templateContent);
@@ -49,7 +53,7 @@ public class JobRunner
 				string result = template.Render(jobContext);
 
 				// Ensure the output directory exists
-				string itemOutputPath = ResolvePath(item.OutputPath, rootDirectory);
+				string itemOutputPath = ResolvePath(item.OutputPath, outputDirectory);
 				string outputDir = Path.GetDirectoryName(itemOutputPath) ?? "output";
 				Directory.CreateDirectory(outputDir);
 

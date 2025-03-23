@@ -10,6 +10,11 @@ public class Job
 	public string? LoadDirectory { get; private set; } = null;
 	public class Task
 	{
+		[JsonProperty("template-dir")]
+		public string? TemplateDirectory { get; set; } = null;
+		[JsonProperty("output-dir")]
+		public string? OutputDirectory { get; set; } = null;
+
 		[JsonProperty("model")]
 		public string? ModelPath { get; set; } = null;
 		public class Item
