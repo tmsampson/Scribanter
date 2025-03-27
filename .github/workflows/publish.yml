@@ -44,6 +44,10 @@ jobs:
         run: |
           dotnet publish Src/Scribanter/Scribanter.csproj -c Release -o publish/${{ matrix.rid }}-self-contained -r ${{ matrix.rid }} --self-contained -p:PublishSingleFile=true -p:EnableCompressionInSingleFile=false
 
+      - name: Install zip (Windows)
+        if: runner.os == 'Windows'
+        run: choco install zip
+
       - name: Package Files
         run: |
           cd publish
