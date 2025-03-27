@@ -42,8 +42,7 @@ jobs:
 
       - name: Build (Self-Contained, Single File, Trimmed)
         run: |
-          dotnet publish Src/Scribanter/Scribanter.csproj -c Release -o publish/${{ matrix.rid }}-self-contained -r ${{ matrix.rid }} --self-contained \
-          -p:PublishSingleFile=true -p:PublishTrimmed=true -p:EnableCompressionInSingleFile=false
+          dotnet publish Src/Scribanter/Scribanter.csproj -c Release -o publish/${{ matrix.rid }}-self-contained -r ${{ matrix.rid }} --self-contained -p:PublishSingleFile=true -p:EnableCompressionInSingleFile=false
 
       - name: Package Files
         run: |
