@@ -1,0 +1,77 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"  # Runs only when a version tag (e.g., v0.1.1) is pushed
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version tag (e.g., v0.1.1)"
+        required: true
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            rid: linux-x64
+          - os: macos-latest
+            rid: osx-x64
+          - os: macos-latest
+            rid: osx-arm64
+          - os: windows-latest
+            rid: win-x64
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "9.x"
+
+      - name: Build (Framework-Dependent)
+        run: |
+          dotnet publish Src/Scribanter.sln -c Release -o publish/${{ matrix.rid }} -r ${{ matrix.rid }} --no-self-contained
+
+      - name: Build (Self-Contained, Single File, Trimmed)
+        run: |
+          dotnet publish Src/Scribanter.sln -c Release -o publish/${{ matrix.rid }}-self-contained -r ${{ matrix.rid }} --self-contained \
+          -p:PublishSingleFile=true -p:PublishTrimmed=true -p:EnableCompressionInSingleFile=false
+
+      - name: Package Files
+        run: |
+          cd publish
+          zip -r ../scribanter-${{ matrix.rid }}.zip ${{ matrix.rid }}
+          zip -r ../scribanter-${{ matrix.rid }}-self-contained.zip ${{ matrix.rid }}-self-contained
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: scribanter-${{ matrix.rid }}
+          path: scribanter-${{ matrix.rid }}*.zip  # Uploads both ZIPs
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Build Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: artifacts/**/*
+          token: ${{ secrets.SCRIBANTER_API }}  # Ensure this matches your actual secret name
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          draft: false
+          prerelease: false
