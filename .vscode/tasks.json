@@ -1,5 +1,12 @@
 {
 	"version": "2.0.0",
+	"inputs": [
+		{
+			"id": "versionTag",
+			"type": "promptString",
+			"description": "Enter the version tag (e.g., 1.0.0)"
+		}
+	],
 	"tasks": [
 		{
 			"label": "Scribanter: Init",
@@ -32,18 +39,17 @@
 			"detail": "Runs the tests for the C# project."
 		},
 		{
-			"label": "Scribanter: Publish",
-			"command": "dotnet",
-			"type": "process",
+			"label": "Scribanter: Publish Release",
+			"type": "shell",
+			"command": "bash",
 			"args": [
-				"publish",
-				"${workspaceFolder}/Src/Scribanter/Scribanter.csproj",
 				"-c",
-				"Release",
-				"-o",
-				"${workspaceFolder}/Publish"
+				"git tag v${input:versionTag} && git push origin v${input:versionTag}"
 			],
-			"problemMatcher": "$msCompile"
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always"
+			}
 		}
 	]
 }
