@@ -38,11 +38,11 @@ jobs:
 
       - name: Build (Framework-Dependent)
         run: |
-          dotnet publish Src/Scribanter.sln -c Release -o publish/${{ matrix.rid }} -r ${{ matrix.rid }} --no-self-contained
+          dotnet publish Src/Scribanter/Scribanter.csproj -c Release -o publish/${{ matrix.rid }} -r ${{ matrix.rid }} --no-self-contained
 
       - name: Build (Self-Contained, Single File, Trimmed)
         run: |
-          dotnet publish Src/Scribanter.sln -c Release -o publish/${{ matrix.rid }}-self-contained -r ${{ matrix.rid }} --self-contained \
+          dotnet publish Src/Scribanter/Scribanter.csproj -c Release -o publish/${{ matrix.rid }}-self-contained -r ${{ matrix.rid }} --self-contained \
           -p:PublishSingleFile=true -p:PublishTrimmed=true -p:EnableCompressionInSingleFile=false
 
       - name: Package Files
